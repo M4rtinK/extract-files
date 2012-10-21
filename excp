@@ -35,11 +35,11 @@ outFolder = sys.argv[1]
 def handleFolder(foo, dirName, names):
   """handle folder visited by walk"""
   for name in names:
-    path = os.apth.join(dirName, name)
+    path = os.path.join(dirName, name)
     # copy all files to target folder
     if os.path.isfile(path):
       shutil.copy(path, outFolder)
 
 # walk through all folders in the input directory
-os.path.walk(inFolder, handleFolder())
+os.path.walk(inFolder, handleFolder, None)
 exit(0) # done

@@ -5,4 +5,4 @@
 
 cp excp /usr/bin/excp
 cp exmv /usr/bin/excp
-echo "excp and exmv added to path (/usr/bin/)"
+echo "excp and exmv installed to PATH (/usr/bin/)"

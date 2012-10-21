@@ -1,0 +1,45 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#----------------------------------------------------------------------------
+# Copy all files from directory tree to target folder
+#----------------------------------------------------------------------------
+# Copyright 2012, Martin Kolman
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#----------------------------------------------------------------------------
+
+import os
+import sys
+import shutil
+
+# check arguments
+if len(sys.argv) != 2:
+  print('Error: wrong number of arguments')
+  print('Usage: excp source_folder target_folder')
+  exit(1)
+
+inFolder = sys.argv[0]
+outFolder = sys.argv[1]
+
+def handleFolder(foo, dirName, names):
+  """handle folder visited by walk"""
+  for name in names:
+    path = os.apth.join(dirName, name)
+    # copy all files to target folder
+    if os.path.isfile(path):
+      shutil.copy(path, outFolder)
+
+# walk through all folders in the input directory
+os.path.walk(inFolder, handleFolder())
+exit(0) # done

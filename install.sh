@@ -4,5 +4,5 @@
 # NOTE: you need to be root to run this
 
 cp excp /usr/bin/excp
-cp exmv /usr/bin/excp
+cp exmv /usr/bin/exmv
 echo "excp and exmv installed to PATH (/usr/bin/)"

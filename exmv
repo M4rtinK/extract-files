@@ -25,7 +25,7 @@ import shutil
 
 # check arguments
 if len(sys.argv) != 3:
-  print('Error: wrong number of arguments')
+  print('exmv: wrong number of arguments')
   print('Usage: exmv source_folder target_folder')
   exit(1)
 

@@ -24,13 +24,15 @@ import sys
 import shutil
 
 # check arguments
-if len(sys.argv) != 2:
+if len(sys.argv) != 3:
   print('Error: wrong number of arguments')
   print('Usage: excp source_folder target_folder')
   exit(1)
 
-inFolder = sys.argv[0]
-outFolder = sys.argv[1]
+inFolder = sys.argv[1]
+outFolder = sys.argv[2]
+if not os.path.exists(outFolder):
+  os.makedirs(outFolder)
 
 def handleFolder(foo, dirName, names):
   """handle folder visited by walk"""
